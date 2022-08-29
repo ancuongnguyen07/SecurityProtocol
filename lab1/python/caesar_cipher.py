@@ -43,7 +43,7 @@ def decryption(ciphertext, key_shift):
         return ''.join(plaintext)
     except:
         print('ERROR')
-        return None 
+        return None
 
 def starter():
     '''
