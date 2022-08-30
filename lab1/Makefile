@@ -11,6 +11,6 @@ $(DIR_BUILD)/$(MAIN).pdf: $(TEXSRC)
 	latexmk -pdf -pvc -pdflatex="pdflatex $(OPT)" $(MAIN) -auxdir=$(DIR_BUILD) -outdir=$(DIR_BUILD)
 
 clean:
-	rm -f $(MAIN).{log,aux,bcf,fdb_latexmk,fls,lof,lot,run.xml,synctex.gz,toc,upa,upd,ubp,bbl,blg}
+	rm -f $(DIR_BUILD)/$(MAIN).{log,aux,bcf,fdb_latexmk,fls,lof,lot,run.xml,synctex.gz,toc,upa,upd,ubp,bbl,blg,pdf,out}
 
 .PHONY: clean all
