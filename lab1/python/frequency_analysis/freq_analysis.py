@@ -1,4 +1,4 @@
-import string
+import string, sys
 
 FREQ_TABLE = englishLetterFreq = {
     'E': 12.70, 'T': 9.06, 'A': 8.17, 
@@ -56,10 +56,8 @@ def decryption(ciphertext):
     return ''.join(plaintext)
 
 def main():
-    ciphertext = 'JAJQ VMUYQJXX EOXR KMXX. M QJI VMP ICDD NZEJ. MQV IGJQ RGJ XOQ XGCQJX CR ICDD XGCQJ ZOR RGJ' \
-                + 'NDJMUJU. RGZXJ IJUJ RGJ XRZUCJX RGMR XRMPJV ICRG PZO, RGMR EJMQR XZEJRGCQL, JAJQ CB PZO IJUJ' \
-                + 'RZZ XEMDD RZ OQVJUXRMQV IGP." CQ IGCNG EZACJ IMX RGCX SOZRJ XMCV, IGZ XMCV CR MQV RZ IGZE' \
-                + 'IMX GJ XKJMYCQL RZ? GCQR: RGJ FJXR BMQRMXP EZACJ RUCDZLP ZB MDD RCEJ'
+    with open(sys.argv[1], 'r') as text_file:
+        ciphertext = text_file.read()
     
     print(f'Plaintext:\n{decryption(ciphertext)}')
 
