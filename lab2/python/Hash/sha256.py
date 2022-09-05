@@ -19,6 +19,9 @@ def main():
     elif mode == '-v':
         file_path, hash = sys.argv[2:4]
         print(hash == compute_hash(file_path))
+    else:
+        print(f'Invalid option')
+        return
 
 if __name__ == '__main__':
     main()
