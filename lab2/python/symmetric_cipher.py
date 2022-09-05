@@ -15,6 +15,7 @@ def generate_key():
     return get_random_bytes(KEY_SIZE)
 
 def encrypt(plaintext, private_key):
+    # plaintext must be plain string, not bytes
     start = time.time()
     padded_plaintext = util.pad(plaintext.encode('utf-8'), BLOCK_SIZE)
     cipher = AES.new(private_key, AES.MODE_CBC)
@@ -26,6 +27,7 @@ def encrypt(plaintext, private_key):
     return iv, ciphertext
 
 def decrypt(iv, ciphertext, private_key):
+    # iv, ciphertext must be bytes, not text string
     try:
         start = time.time()
         iv = base64.b64decode(iv)
