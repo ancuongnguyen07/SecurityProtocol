@@ -1,2 +1,0 @@
-PKCS#1 OAEP does not guarantee authenticity of the message you decrypt.
-Since the public key is not secret, everybody could have created the encrypted message.
