@@ -1,3 +1,4 @@
+import base64
 import ecies
 import time, sys
 
@@ -35,9 +36,11 @@ def main():
         decrypted_text = decrypt(ciphertext, private_key)
         de_end = time.time()
 
+        ciphertext = base64.b64encode(ciphertext).decode('utf-8')
+
         print(f'Encryption time: {enc_end - enc_start}')
         print(f'Decryption time: {de_end - de_start}')
-        print(f'Ciphertext: {ciphertext}\n')
+        print(f'Ciphertext (base64): {ciphertext}\n')
         print(f'Plaintext: {decrypted_text}')
     except FileNotFoundError:
         print('Plaintext file not found') 
