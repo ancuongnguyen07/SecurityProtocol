@@ -12,8 +12,8 @@ def generate_key_pair(id):
     public_key = private_key.public_key()
     
     # export key pair
-    pub_key_file = f'{id}_public_key'
-    pri_key_file = f'{id}_private_key'
+    pub_key_file = f'{id}_public_key.pub'
+    pri_key_file = f'{id}_private_key.pri'
     with open(pub_key_file, 'wb') as f:
         f.write(public_key.export_key())
     with open(pri_key_file, 'wb') as f:
