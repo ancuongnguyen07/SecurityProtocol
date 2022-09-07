@@ -16,26 +16,41 @@
 
 \section*{Exercise 1}
 %
-I chose the CBC mode of AES symmetic block cipher because its simplicity - one of
+I chose the CBC mode of AES symmetic block cipher because its simplicity --- one of
 classic modes. But in terms of authentication, we should consider modern modes such as
-CCM, EAX, GCM, SIV, and OCB.
+CCM, EAX, GCM, SIV, and OCB.\\
+
+Plaintext: \textbf{Welcome to the Security Protocols course}\\
+Ciphertext (base64):\\
+\textbf{wJR/a8AR0ymG/7HR556SIViaHa4owzbkRE+hANVjlGsShMd+KyYoO1I+wptGppo1}
 
 \begin{figure}[hpt]
     \centering
-    \includegraphics[width=140mm, height=60mm]{aes.png}
+    \includegraphics[width=140mm, height=30mm]{aes.png}
     \caption{AES-256-CBC-mode encrytion-decrytion time}
     \label{fig:aes-cbc}
 \end{figure}
 
-As you can see, the decryption takes a shorter time than the encryption process,
-faster than 60 times in this case.
+As you can see in the figure\ref*{fig:aes-cbc}, the decryption takes a shorter time than
+the encryption process, faster than 60 times in this case. In the above case, my script
+generated a random secret key and an initial vector.\\
+
+\begin{figure}[hpt]
+    \centering
+    \includegraphics[width=140mm, height=30mm]{aes_chosen_key.png}
+    \caption{AES-256-CBC-mode with chosen a private key and an initial vector}
+    \label{fig:aes-cbc-chosen}
+\end{figure}
+
+Without generating IV and private key, the encryption-decryption process took a shorter
+period to finish.
 
 \section*{Exercise 2}
 %
 \subsection*{RSA}
 %
-It worth noting that the process of decryption/signing is much slower than those of
-encryption/verification (signing and verification used in digital signatures).
+It worth noting that the process of decryption-signing is much slower than those of
+encryption-verification (signing and verification used in digital signatures).
 In this exercise, I used PKCS#1 OAEp is an asymmetric cipher based on RSA and the
 OAEP padding, detailed description \href{https://tools.ietf.org/html/rfc8017}{here}.
 
@@ -50,7 +65,7 @@ OAEP padding, detailed description \href{https://tools.ietf.org/html/rfc8017}{he
 %
 \begin{figure}[hpt]
     \centering
-    \includegraphics[width=140mm, height=50mm]{ec.png}
+    \includegraphics[width=140mm, height=50mm]{ecc.png}
     \caption{EC-based encrytion-decrytion time}
     \label{fig:ec}
 \end{figure}
