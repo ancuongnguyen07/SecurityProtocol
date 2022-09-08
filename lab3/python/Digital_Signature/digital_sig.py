@@ -1,4 +1,4 @@
-import sys
+import sys, base64
 from Crypto.Hash import SHA256
 from Crypto.Signature import DSS
 from Crypto.PublicKey import ECC
@@ -32,6 +32,8 @@ def main():
     pri_key = open(pri_key_file, 'r').read()
 
     signed = sign(message, pri_key)
+    signed_base64 = base64.b64encode(signed)
+    print(f'Signature (base64): {signed_base64}')
     verify(message, pub_key, signed)
 
 if __name__ == '__main__':
