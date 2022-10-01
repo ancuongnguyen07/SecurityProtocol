@@ -4,3 +4,4 @@
 *.pri
 */python/CA/
 *.DS_Store
+*.priv
