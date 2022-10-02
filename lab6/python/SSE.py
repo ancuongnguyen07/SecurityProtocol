@@ -260,20 +260,22 @@ def search_keyword(keyword, iv_file, iv_keyvalue, secret_key):
     recompute_parameters(id, hashed_keyword, numsearch, numfile)
 
 def main():
-    
-    # print('Creating a dictionary and encrypting plaintext files...')
-    create_dictionary(INPUT_PATH)
+    assert len(sys.argv) == 2, 'You should choose mode -i,-s and no other arguments'
+    mode = sys.argv[1]
+    assert mode == '-i' or mode == '-s'
 
-    # searching function
-    secret_key = retrieve_secret_key()
-    iv_file_crypt = retrieve_iv_file('iv_file.priv')
-    iv_keyvalue = retrieve_iv_file('iv_keyvalue.priv')
-    keyword = input('Which word do you want to find? ')
-    search_keyword(keyword,iv_file_crypt,iv_keyvalue,secret_key)
+    if mode == '-i':
+        # print('Creating a dictionary and encrypting plaintext files...')
+        create_dictionary(INPUT_PATH)
+    else:
+        # searching function
+        secret_key = retrieve_secret_key()
+        iv_file_crypt = retrieve_iv_file('iv_file.priv')
+        iv_keyvalue = retrieve_iv_file('iv_keyvalue.priv')
+        keyword = input('Which word do you want to find? ')
+        search_keyword(keyword,iv_file_crypt,iv_keyvalue,secret_key)
 
-    # SQL_CONN.close()
-
-    # check_retrieve_IV_correctly()
+    SQL_CONN.close()
 
 if __name__ == '__main__':
     main()
