@@ -15,50 +15,52 @@
 
 \section*{Exercise 1 --- Creating a Dictionary}
 
-\begin{figure}[!hpt]
+\begin{figure}[hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
                     keepaspectratio]{tables_info.png}
     \caption{Info of two tables: \emph{sse\_csp\_keywords} and
-    \emph{sse\_keywords}.}
+    \emph{sse\_keywords} (Exercise 1).}
 \end{figure}
 
-\begin{figure}[!hpt]
+\begin{figure}[hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{sse_csp_keywords_table.png}
-    \caption{sse\_csp\_keywords Table.}\label{fig:sse_csp_keywords}
+    \caption{sse\_csp\_keywords Table (Exercise 1).}\label{fig:sse_csp_keywords}
 \end{figure}
 
-\begin{figure}[!hpt]
+\begin{figure}[hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{sse_keywords_table.png}
-    \caption{sse\_keywords Table.}\label{fig:sse_keywords}
+    \caption{sse\_keywords Table (Exercise 1).}\label{fig:sse_keywords}
 \end{figure}
 
 \textbf{Total combined size of test files: 136K --- 25 .txt files}.
 It took around 1.89 seconds to create the dictionary and encrypt
-25 .txt files (\autoref{fig:create_dict})
+25 .txt files (\autoref{fig:create_dict}). There are a range of 100-500
+words in .txt files. You can find more detail of the implementation
+via the GitHub repo: \url{https://github.com/ancuongnguyen07/SecurityProtocol}
 
 \begin{figure}[!hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{create_dict_time_printing_included.png}
-    \caption{Time taken to create the dictionary and encrypt 25 .txt files.}
+    \caption{Time taken to create the dictionary and encrypt 25 .txt files (Exercise 1).}
     \label{fig:create_dict}
 \end{figure}
 
 \section*{Exercise 2 --- Searching in the dark}
 
-\begin{figure}[!hpt]
+\begin{figure}[hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{searching_decrypting_time.png}
     \caption{Time taken to find the keyword and decrypt the files.}
 \end{figure}
 
-\begin{figure}[!hpt]
+\begin{figure}[hpt]
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{keyword_in_decrypted_file.png}
