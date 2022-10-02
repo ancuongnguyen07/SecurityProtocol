@@ -7,7 +7,7 @@
 
 \title{COMP.SEC.220 Security Protocol\footnote{github --- \url{https://github.com/ancuongnguyen07/SecurityProtocol}}}
 \author{Cuong Nguyen --- LAB 6}
-\date{22/04/2022}
+\date{02/10/2022}
 
 \begin{document}
     
@@ -18,19 +18,44 @@
 \begin{figure}
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
+                    keepaspectratio]{tables_info.png}
+    \caption{Info of two tables: \emph{sse\_csp\_keywords} and
+    \emph{sse\_keywords}.}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{sse_csp_keywords_table.png}
-    \caption{sse_csp_keywords Table}
-    \label{fig:sse_csp_keywords}
+    \caption{sse\_csp\_keywords Table.}\label{fig:sse_csp_keywords}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[height=\textheight,width=\textwidth,
     keepaspectratio]{sse_keywords_table.png}
-    \caption{sse_keywords Table}
-    \label{fig:sse_keywords}
+    \caption{sse\_keywords Table.}\label{fig:sse_keywords}
 \end{figure}
 
-\textbf{Total combined size of test files: 136K --- 25 .txt files}
+\textbf{Total combined size of test files: 136K --- 25 .txt files}.
+It took around 1.89 seconds to create the dictionary and encrypt
+25 .txt files (\autoref{fig:create_dict})
+
+\begin{figure}
+    \centering
+    \includegraphics[height=\textheight,width=\textwidth,
+    keepaspectratio]{create_dict_time_printing_included.png}
+    \caption{Time taken to create the dictionary and encrypt 25 .txt files.}
+    \label{fig:create_dict}
+\end{figure}
+
+\section*{Exercise 2 --- Searching in the dark}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=\textheight,width=\textwidth,
+    keepaspectratio]{searching_decrypting_time.png}
+    \caption{Time taken to find the keyword and decrypt the files.}
+\end{figure}
 
 \end{document}
