@@ -1,0 +1,15 @@
+Given a message \emph{m} and the OTP encryption \emph{c}, we \textbf{can} compute
+the OTP key \emph{k} by XORing the plaintext \emph{m} and the ciphertext \emph{c}.
+The ciphertext is given by:
+
+\begin{align*}
+    c = m \oplus k,
+\end{align*}
+
+therefore, we can easily compute the \emph{k} by:
+
+\begin{align*}
+    k = c \oplus m,
+\end{align*}
+
+where \emph{c} and \emph{m} are known.

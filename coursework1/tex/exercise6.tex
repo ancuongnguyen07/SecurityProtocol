@@ -1,0 +1,50 @@
+\subsection*{a) Step-by-step what the receiver would do}
+%
+\textbf{Protocol A}
+
+\begin{itemize}
+    \item Given \emph{c}, the receiver decrypt with secret key \(k_1\),
+    obtaning the following: \(x||H(k_2||x)\).
+    \item Hash the combination of \(k_2\) and \emph{x} (\(k_2||x\)),
+    obtaining \(H'(k_2||x)\).
+    \item Verify if \(H(k_2||x) == H'(k_2||x)\). If they are equal the received message
+    is valid. Otherwise, someone intervened the original message. 
+\end{itemize}
+
+\textbf{Protocol B}
+
+\begin{itemize}
+    \item Given \emph{c}, the receiver decrypt with shared key \emph{k},
+    obtaining the following: \(x||\sigma_{pr}(H(x))\).
+    \item Decrypting \(\sigma_{pr}(H(x))\) with the public key of the sender,
+    obtaning the hash value \(H(x)\).
+    \item Hash the received message \emph{x}, obtaining \(H'(x)\)
+    \item Verify if \(H(x) == H'(x)\). If they are equal the received message
+    is valid. Otherwise, someone intervened the original message. 
+\end{itemize}
+
+\subsection*{b) Security properties}
+%
+\textbf{Protocol A}
+
+\begin{itemize}
+    \item \textbf{Confidentiality}: YES as it conducts the encryption with secret
+    key \(k_1\).
+    \item \textbf{Integrity}: YES as it uses keyed hash function with secret key
+    \(k_2\) to verify the integrity.
+    \item \textbf{Non-repudiation}: NO as both sender and receiver know the secret
+    \(k_2\), one of them can fake the message that it is sent by the other. The
+    sender can reject that he/she did send the message
+\end{itemize}
+
+\textbf{Protocol B}
+
+\begin{itemize}
+    \item \textbf{Confidentiality}: YES as it conducts the encryption with shared
+    secret key \emph{k}.
+    \item \textbf{Integrity}: YES as it uses the digital signature with the private
+    key of the sender to sign and the public key to verify.
+    \item \textbf{Non-repudiation}: YES as only the sender know the private key which
+    is used to sign the signature. Thus, the sender cannot reject that he/she did not
+    send the message.
+\end{itemize}

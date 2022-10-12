@@ -1,0 +1,44 @@
+\subsection*{a)}
+Alice's intermediate values:
+
+\begin{align*}
+    X &= g^{a} \mod p\\
+    X &= 7^6 \mod 11\\
+    X &= 4 \mod 11
+\end{align*}
+
+Bob's intermediate values:
+
+\begin{align*}
+    Y &= g^{b} \mod p\\
+    Y &= 7^9 \mod 11\\
+    Y &= 8 \mod 11
+\end{align*}
+
+The final key that Alice and Bob exchange:
+
+\begin{align*}
+    K_{AB} &= X^b \mod p\\
+    K_{AB} &= 4^9 \mod 11\\
+    K_{AB} &= 3 \mod 11
+\end{align*}
+
+\subsection*{b)}
+Since \(g=7\) is the primitive root of \(p=11\) so we can brute-force
+\emph{a} in \(g^a = 5 \mod 11\) in at most 10 trials. Hence, the secret
+value of Alice \emph{a} is 2. The secret value of Bob \emph{b}, which is 5, can be
+computed by the same approach. Thus, the final key that Alice and Bob exchanged
+is given by:
+
+\begin{align*}
+    K_{AB} &= X^b = Y^a = g^{ab} \mod p\\
+    K_{AB} &= 1 \mod 11 
+\end{align*}
+
+\subsection*{c)}
+By running the Caesar decryption script with the shift key is 1 (left-shift 1
+in this case. In other words, it is right-shift 25), I obtained the plaintext:
+
+\begin{center}
+    \textbf{SUEDE JACKET WITH CANDY STRIPE LINING}
+\end{center}

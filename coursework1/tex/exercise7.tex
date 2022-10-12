@@ -1,0 +1,34 @@
+\subsection*{a)}
+%
+\textbf{Foward privacy} states that the server cannot realize whether or not a newly added
+file contains any keywords used in previous searches.
+
+\textbf{Backward privacy} states that the server cannot detect a previously deleted file
+which contains keywords of search queries.
+
+\subsection*{b)}
+%
+After the following operations, the CSP learn that:
+\begin{itemize}
+    \item Alice adds \((f_1,w_1)\): adding operation, the size and unique id of \(f_1\)
+    \item Alice searches \(f_1\): search pattern, access pattern
+    \item Alice adds \((f_2,w_1)\): adding operation, the size and unique id of \(f_2\)
+\end{itemize}
+
+\subsection*{c)}
+%
+The leakage associated with the serach function if:
+\begin{itemize}
+    \item Backward Privacy Type-I:\ \emph{TimeDB(w)}
+    \item Backward Privacy Type-II:\ \emph{TimeDB(w),Updates(w)}
+    \item Backward Privacy Type-III:\ \emph{TimeDB(w),Updates(w),DelHist(w)}
+\end{itemize}
+
+Some definitions:
+\begin{itemize}
+    \item \emph{TimeDB(w)}: which files currently containing
+    \emph{w} and when they were added.
+    \item \emph{Updates(w)}: when all updates related to \emph{w} occured.
+    \item \emph{DelHist(w)}: which operation is canceled by
+    which operation.
+\end{itemize}

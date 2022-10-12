@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 MAIN=answer_sheet
-TEXSRC=$(wildcard *.tex)
+TEXSRC=$(wildcard *.tex) $(wildcard tex/*.tex)
 DIR_BUILD=build
 OPT= --interaction=nonstopmode
 
