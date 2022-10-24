@@ -19,16 +19,22 @@ After the following operations, the CSP learn that:
 %
 The leakage associated with the serach function if:
 \begin{itemize}
-    \item Backward Privacy Type-I:\ \emph{TimeDB(w)}
-    \item Backward Privacy Type-II:\ \emph{TimeDB(w),Updates(w)}
-    \item Backward Privacy Type-III:\ \emph{TimeDB(w),Updates(w),DelHist(w)}
+    \item Backward Privacy Type-I:\ \emph{TimeDB(w)} --- \(f_2\) added at time 2 currently
+    stores \(w_1\), 3 updates on \(w\) (2 insertion and 1 deletion).
+    \item Backward Privacy Type-II:\ \emph{TimeDB(w),Updates(w)} --- \(f_2\) added at time 2
+    currently stores \(w_1\), 3 updates on \(w\) (2 insertion and 1 deletion), updates on
+    \(w\) occurs at time 1,2,3.
+    \item Backward Privacy Type-III:\ \emph{TimeDB(w),Updates(w),DelHist(w)} --- \(f_2\)
+    added at time 2 currently stores \(w_1\), 3 updates on \(w\) (2 insertion and 1 deletion),
+    updates on \(w\) occurs at time 1,2,3, and the insertion at time 2 is canceled by the
+    deletion at time 3.
 \end{itemize}
 
-Some definitions:
+Some notations:
 \begin{itemize}
     \item \emph{TimeDB(w)}: which files currently containing
     \emph{w} and when they were added.
     \item \emph{Updates(w)}: when all updates related to \emph{w} occured.
-    \item \emph{DelHist(w)}: which operation is canceled by
-    which operation.
+    \item \emph{DelHist(w)}: which insertion is canceled by
+    which deletion.
 \end{itemize}
