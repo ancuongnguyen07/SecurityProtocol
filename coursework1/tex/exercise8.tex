@@ -60,12 +60,18 @@ The authentication protocol is illustrated in \autoref{fig:password_protocol}.
     which you don't have, that's a moment you realize that someone did
     attack your password (in this case the attacker just passively explore
     what can do with your account without changing your password).
-
+    \item If the database storing \((x_i,i)\) is compromised, these leaked
+    information are able to be used once since the entry \((x_i,i)\) changes
+    every successful authentication. However, if the user log-in at least
+    one more time after the pair \((x_i,i)\) is leaked, then the compromised
+    pair is invalid.
 \end{itemize}
 
 \subsection*{b) Possible attacks}
 %
 \begin{itemize}
-    \item Man-in-The-Middle attack is efforlessly conducted since all messages are
-    not encrypted.
+    \item The pair \((x_i,i)\) is easily captured by the attacker as it is not
+    encrypted.
+    \item The attacker can impersonate the server and re-send \(N-1,\cdots,1\)
+    to Alice to retrieve \(x_N,\cdots,x_1\).
 \end{itemize}
