@@ -43,8 +43,8 @@ CIPHER_BLOCKS = [
 replacement = {'110000': 'E', '000110':'T', '001010': 'H','000101': 'A','010101':'X'}
 plaintext = ''.join(replacement[block] if block in replacement else '*' for block in CIPHER_BLOCKS)
 
-# counts = Counter(ngrams(CIPHER_BLOCKS))
+counts = Counter(ngrams(CIPHER_BLOCKS))
 
-# print(counts.most_common(5))
+print(counts.most_common(5))
 # plaintext = ''.join([bin_to_char(block) for block in CIPHER_BLOCKS])
-print(plaintext)
+# print(plaintext)
