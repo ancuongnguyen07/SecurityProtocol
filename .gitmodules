@@ -1,0 +1,3 @@
+[submodule "ainQ_scheme"]
+	path = ainQ_scheme
+	url = git@github.com:ancuongnguyen07/ainQ_scheme.git
